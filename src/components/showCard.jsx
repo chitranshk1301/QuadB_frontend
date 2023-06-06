@@ -7,20 +7,16 @@ import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 
 export default function showCard(props) {
-    // function handleclick() {
-    //     console.log(props.name);
-    //     window.open("http://localhost:3000/show/{props.id}");
-    // }
+
     return (
-        <Link to={`/show/${props.id}`}>
-            <Card sx={{ width: 345 }} key={props.key}>
+        <Card sx={{ width: 345 }} key={props.key}>
+            <Link to={`/show/${props.id}`}>
                 <CardActionArea>
                     <CardMedia
                         component="img"
-                        height="140"
+                        height="150"
                         image={props.image}
                         alt="show's image"
-
                     />
                     <CardContent>
                         <Typography gutterBottom variant="h5" component="div" className=''>
@@ -39,12 +35,12 @@ export default function showCard(props) {
                         </Typography>
                     </CardContent>
                 </CardActionArea>
-                <CardActions>
-                    <Button size="small" color="primary">
-                        <a href={props.link}>TVmaze link</a>
-                    </Button>
-                </CardActions>
-            </Card>
-        </Link>
+            </Link>
+            <CardActions>
+                <Button size="small" color="primary">
+                    <a href={props.link}>TVmaze link</a>
+                </Button>
+            </CardActions>
+        </Card>
     );
 }

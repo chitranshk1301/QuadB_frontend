@@ -13,7 +13,7 @@ function App() {
       />
       <BrowserRouter>
         <Routes>
-          <Route index element={<ShowsList />} />
+          <Route path="/" element={<ShowsList />} />
           <Route path="show/:id" element={<Show />} />
         </Routes>
       </BrowserRouter>

@@ -17,21 +17,30 @@ const Show = (props) => {
       .catch((err) => {
         console.log(err)
       })
-  }, [show])
+  }, [show, params.id])
 
   return (
     <div>
-      <div className='container mt-28 sm:mx-[11rem]'>
-        <header className='sm:mx-[24.5em] sm:w-max text-2xl mb-16 -mt-16 font-semibold text-gray-400'>Click on the card to view more</header>
+      <div className='container mt-28 sm:mx-[11rem] mb-28 p-20 w-5/6 h-5/6 detail'>
         <div className='flex flex-col items-center'>
           <div className='flex flex-row'>
-            <img src={show.image?.medium} alt="" className='w-1/3' />
-            <div className='flex flex-col'>
-              <h1 className='text-4xl font-semibold'>{show.name}</h1>
-              <h2 className='text-2xl font-semibold'>{show.type}</h2>
-              <h3 className='text-xl font-semibold'>{show.genres?.slice(0, 3).join(', ')}</h3>
-              <h3 className='text-xl font-semibold'>{show.language}</h3>
-              <h3 className='text-xl font-semibold'>{show.rating?.average}</h3>
+            <img src={show.image?.original} alt="show-img" className='w-1/3' />
+            <div className='flex flex-col ml-32'>
+              <h1 className='text-5xl font-semibold'>{show.name}</h1>
+              <hr 
+                className='border-2 border-gray-400 w-1/2 mt-2 mb-2'
+              />
+              <h2 className='text-2xl font-semibold'><span className='font-extrabold underline'>Genre:   </span> {show.genres}</h2>
+              <h3 className='text-xl font-semibold'><span className='font-extrabold underline'>Type:     </span>  {show.type}</h3>
+              <h3 className='text-xl font-semibold'><span className='font-extrabold underline'>Language: </span>  {show.language}</h3>
+              <h3 className='text-xl font-semibold'><span className='font-extrabold underline'>Status:   </span>  {show.status}</h3>
+              <h3 className='text-xl font-semibold'><span className='font-extrabold underline'>Runtime:   </span>  {show.runtime}</h3>
+              <h3 className='text-xl font-semibold'><span className='font-extrabold underline'>Average Runtime: </span>  {show.averageRuntime}</h3>
+              <h3 className='text-xl font-semibold'><span className='font-extrabold underline'>Premiered:     </span>  {show.premiered}</h3>
+              <h3 className='text-xl font-semibold'><span className='font-extrabold underline'>Official site:     </span>  {show.officialSite}</h3>
+              <h3 className='text-xl font-semibold'><span className='font-extrabold underline'>Rating:    </span>  {show.rating?.average}</h3>
+              <h3 className='text-xl font-semibold underline'><span className='font-extrabold underline'>Summary:    </span></h3>
+              <h4 className='text-xl font-semibold'>{show.summary}</h4>
             </div>
           </div>
         </div>

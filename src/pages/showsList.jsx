@@ -24,13 +24,15 @@ function ShowsList(props) {
 
     return (
         <div className='container mt-28 sm:mx-[11rem]'>
-            <header className='sm:mx-[24.5em] sm:w-max text-2xl mb-16 -mt-16 font-semibold text-gray-400'>Click on the card to view more</header>
+            <p className='sm:mx-[24.5em] sm:w-max text-2xl mb-16 -mt-16 font-semibold text-gray-400'>Click on the card to view more</p>
             <Box
                 sx={{
                     display: 'flex',
                     flexDirection: 'row',
                     flexWrap: 'wrap',
                     justifyContent: 'center',
+                    rowGap: 14,
+                    alignItems: 'center',
                     '& > :not(style)': { m: 12, width: 320, height: 450 },
                 }}
             >
@@ -48,7 +50,8 @@ function ShowsList(props) {
                                 link={show.show.url}
                                 self_link={show.show._links.self.href}
                             />
-                        </Item>)
+                        </Item>
+                        )
                 })}
             </Box>
         </div>
