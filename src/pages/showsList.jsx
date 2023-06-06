@@ -1,9 +1,8 @@
 import * as React from 'react';
 import Item from '@mui/material/ListItem';
 import { useState, useEffect } from 'react'
-import ShowCard from './showCard'
+import ShowCard from '../components/showCard'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
 import Box from '@mui/material/Box';
 
 function ShowsList(props) {
@@ -22,9 +21,6 @@ function ShowsList(props) {
             })
     }, [shows])
 
-    function handleclick() {
-        <Link to={{ pathname: "https://github.com/chitranshk1301" }} />
-    }
 
     return (
         <div className='container mt-28 sm:mx-[11rem]'>
@@ -42,6 +38,7 @@ function ShowsList(props) {
                     return (
                         <Item key={show.show.id}>
                             <ShowCard
+                                id={show.show.id}
                                 name={show.show.name}
                                 image={show.show.image.medium}
                                 type={show.show.type}
@@ -49,7 +46,7 @@ function ShowsList(props) {
                                 genre={show.show.genres.slice(0, 3)}
                                 language={show.show.language}
                                 link={show.show.url}
-                                onClick={handleclick()}
+                                self_link={show.show._links.self.href}
                             />
                         </Item>)
                 })}
