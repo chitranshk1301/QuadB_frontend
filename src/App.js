@@ -5,9 +5,11 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 function App() {
   return (
     <div className="App">
+      <a href="/">
       <header className="flex justify-center sm:mx-[10em] sm:mt-16 sm:w-max text-6xl font-extrabold text-gray-400 overline">
         QuadB <span className="text-orange-400">TV-shows</span> collection
       </header>
+      </a>
       <hr
         className="border-1 border-black w-full mt-8"
       />
