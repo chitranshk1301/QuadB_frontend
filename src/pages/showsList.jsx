@@ -42,7 +42,7 @@ function ShowsList(props) {
                             <ShowCard
                                 id={show.show.id}
                                 name={show.show.name}
-                                image={show.show.image?.medium}
+                                image={show.show.image}
                                 type={show.show.type}
                                 rating={show.show.rating.average}
                                 genre={show.show.genres.slice(0, 3)}
